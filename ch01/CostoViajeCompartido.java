@@ -6,7 +6,7 @@ public class CostoViajeCompartido {
             double totalKM;
             double costoLTNafta;
             double promedioLTxKM;
-            double coutaEstacionamiento;
+            double cuotaEstacionamiento;
             double peajePorDia;
             int cantidadDePersonas;
             double costoTotal;
@@ -23,7 +23,7 @@ public class CostoViajeCompartido {
             promedioLTxKM = entrada.nextDouble();
 
             System.out.print("Ingrese el costo del estacionamiento total del dia: ");
-            coutaEstacionamiento = entrada.nextDouble();
+            cuotaEstacionamiento = entrada.nextDouble();
 
             System.out.print("Ingrese el costo de los peajes por dia: ");
             peajePorDia = entrada.nextDouble();
@@ -33,8 +33,12 @@ public class CostoViajeCompartido {
 
             gastoNafta = (totalKM * promedioLTxKM) * costoLTNafta;
 
-            costoTotal = (gastoNafta + coutaEstacionamiento + peajePorDia);
-      
+            costoTotal = (gastoNafta + cuotaEstacionamiento + peajePorDia);
+
+            if(cantidadDePersonas == 1) {
+                System.out.printf("El costo total para vos solo es de %.2f pesos", costoTotal);
+            }
+
             if (cantidadDePersonas == 2) {
                 ahorro = (costoTotal / cantidadDePersonas);
                 System.out.printf("Puede ahorrar %.2f pesos compartiendo el viaje con %d personas.", ahorro,
